@@ -1353,15 +1353,15 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
 .charts-section{background:var(--black);border-top:1px solid var(--border)}
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
 .chart-full{grid-column:1/-1}
-.chart-card{background:var(--black2);padding:2.5rem 2rem}
+.chart-card{background:var(--black2);padding:2.5rem 2rem;overflow:hidden;max-width:100%}
 .chart-card.full-width{grid-column:1/-1}
-.chart-header{margin-bottom:1.75rem}
-.chart-client{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,169,110,.55);margin-bottom:.5rem}
-.chart-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);line-height:1.25;letter-spacing:-.01em}
-.chart-sub{font-size:.75rem;color:rgba(245,243,239,.4);margin-top:.35rem;font-weight:300;letter-spacing:.02em}
+.chart-header{margin-bottom:1.75rem;overflow:hidden;word-wrap:break-word}
+.chart-client{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,169,110,.55);margin-bottom:.5rem;word-wrap:break-word;overflow-wrap:break-word}
+.chart-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);line-height:1.25;letter-spacing:-.01em;word-wrap:break-word;overflow-wrap:break-word}
+.chart-sub{font-size:.75rem;color:rgba(245,243,239,.4);margin-top:.35rem;font-weight:300;letter-spacing:.02em;word-wrap:break-word;overflow-wrap:break-word}
 
 /* SVG chart theming */
-.chart-wrap{width:100%;overflow:hidden;position:relative}
+.chart-wrap{width:100%;overflow:hidden;position:relative;-webkit-overflow-scrolling:touch}
 .chart-wrap svg{width:100%;display:block}
 .chart-axis text{fill:rgba(245,243,239,.3);font-family:'Jost',sans-serif;font-size:10px;font-weight:300}
 .chart-grid line{stroke:rgba(245,243,239,.06);stroke-dasharray:3,4}
@@ -1415,6 +1415,148 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
   .cpl-label{width:70px;font-size:.6rem}
   .pages-progress{grid-template-columns:1fr 1fr}
   .pp-num{font-size:1.8rem}
+}
+
+
+/* ── MOBILE FIXES COMPLETOS ── */
+@media(max-width:767px){
+  /* Anchos fijos → fluido */
+  .s-intro{max-width:100%;margin-bottom:2.5rem}
+  .bph-sub{max-width:100%}
+  .pc-c-desc{max-width:100%}
+  .article-header{max-width:100%;padding:3rem 1.25rem 2rem}
+  .article-body{max-width:100%;padding:0 1.25rem 4rem}
+
+  /* Hero pricing pills */
+  .hero-pricing{flex-direction:column;gap:0;border:1px solid var(--border)}
+  .hp-item{padding:1rem 1.25rem;border-right:none;border-bottom:1px solid var(--border)}
+  .hp-item:last-child{border-bottom:none}
+  .hp-val{font-size:1.1rem}
+
+  /* Stats en columna en móvil pequeño */
+  .stats{display:grid;grid-template-columns:1fr 1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
+  .stat:nth-child(odd){border-right:1px solid var(--border)}
+  .stat-n{font-size:3.5rem}
+
+  /* Frases clientes */
+  .b2b-flow{padding:3rem 1.25rem}
+  .flow-grid{grid-template-columns:1fr}
+  .flow-card{padding:2rem 1.25rem}
+
+  /* Sección de servicios */
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .srv-card{padding:2rem 1.25rem}
+  .srv-card-title{font-size:1.3rem}
+
+  /* Pricing cards */
+  .pricing-wrap{flex-direction:column;gap:1.5rem}
+  .pc-card{min-width:unset;width:100%}
+  .pc-c-price{font-size:3rem}
+
+  /* Clients ticker — más espacio */
+  .clients-bar{padding:.75rem 0}
+  .cb-item{font-size:.85rem;letter-spacing:.12em}
+
+  /* Free note bar */
+  .free-note-bar{flex-direction:column;gap:1.5rem;padding:2rem 1.25rem}
+
+  /* Cal strip */
+  .cal-strip{padding:2rem 1.25rem}
+  .cal-strip-h{font-size:1.3rem}
+
+  /* Results */
+  .results-grid{grid-template-columns:1fr}
+  .result-card{padding:2rem 1.25rem}
+  .rc-metrics{grid-template-columns:1fr 1fr;gap:1rem}
+  .rc-metric-num{font-size:2rem}
+  .rc-tags{flex-wrap:wrap}
+
+  /* Charts */
+  .charts-grid{grid-template-columns:1fr}
+  .chart-card{padding:2rem 1.25rem}
+  .chart-wrap{overflow-x:auto}
+  .chart-wrap svg{min-width:320px;height:auto}
+  .chart-title{font-size:1rem;line-height:1.4;word-wrap:break-word}
+  .chart-sub{font-size:.72rem}
+
+  /* Companies logos */
+  .logos-row{grid-template-columns:repeat(2,1fr)}
+
+  /* Contact form */
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .f-row{grid-template-columns:1fr}
+  .f-inp,.f-sel,.f-txt{font-size:.95rem;padding:.85rem 1rem}
+  .f-submit{width:100%;justify-content:center;padding:1rem}
+
+  /* Tools grid */
+  .tools-grid{grid-template-columns:repeat(3,1fr);gap:1rem}
+  .tool-item{padding:1.25rem .75rem}
+  .tool-n{font-size:.82rem}
+
+  /* SEO Detail acordeón */
+  .acc-title{font-size:1rem;line-height:1.4}
+  .acc-box{padding:1.25rem}
+  .acc-box h4{font-size:1rem}
+  .acc-box p{font-size:.92rem}
+
+  /* Footer */
+  footer{padding:2rem 1.25rem;text-align:center}
+  .ft{font-size:.8rem;line-height:1.7}
+
+  /* Social float → bottom bar en móvil */
+  .social-float{right:.75rem;top:auto;bottom:5.5rem;transform:none;flex-direction:row;gap:.5rem}
+  .sf-btn{width:38px;height:38px}
+
+  /* Nav trigger oculto en móvil (menú hamburguesa) */
+  .nav-trigger{display:none}
+
+  /* Carousel */
+  .cc-dots{display:none}
+  .view-all-btn{font-size:.75rem}
+}
+
+@media(max-width:420px){
+  .srv-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:none}
+  .stat:nth-child(odd){border-right:none}
+  .rc-metrics{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .companies-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-h1{font-size:clamp(2.2rem,10vw,3rem)}
+  .s-title{font-size:clamp(1.8rem,8vw,2.5rem)}
+  .chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+
+
+/* ── CHART MOBILE FIXES ── */
+@media(max-width:767px){
+  .charts-grid{grid-template-columns:1fr;gap:1px}
+  .chart-full{grid-column:auto}
+  .chart-card{padding:1.75rem 1rem;overflow:hidden}
+  .chart-header{padding-right:0;overflow:hidden}
+  .chart-client{font-size:.55rem;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chart-title{font-size:.95rem;line-height:1.35;word-break:break-word;hyphens:auto;white-space:normal}
+  .chart-sub{font-size:.68rem;line-height:1.5;word-break:break-word;white-space:normal}
+  .chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:0}
+  .chart-wrap svg{display:block;min-width:340px}
+  .chart-legend{gap:1rem;margin-top:1rem}
+  .cl-item{font-size:.62rem}
+  /* CPL bars */
+  .cpl-label{width:70px;font-size:.62rem}
+  .cpl-bar-fill{padding-left:.4rem}
+  .cpl-bar-val{font-size:.85rem}
+  /* Pages progress */
+  .pages-progress{grid-template-columns:1fr 1fr}
+  .pp-num{font-size:1.75rem}
+  .pp-label{font-size:.55rem}
+}
+@media(max-width:420px){
+  .chart-title{font-size:.9rem}
+  .chart-wrap svg{min-width:300px}
+  .pages-progress{grid-template-columns:1fr 1fr}
+  .chart-card{padding:1.5rem .85rem}
 }
 
 </style>
@@ -1877,9 +2019,9 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
     <!-- CHART 1: Rankings Growth (full width) -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">aa-meetings.com &middot; SEMrush Position Tracking</div>
-        <div class="chart-title">Keywords en Top 3 y Top 10 &mdash; 43 semanas de crecimiento</div>
-        <div class="chart-sub">Datos reales exportados de SEMrush &middot; Abr 2025 &rarr; Mar 2026</div>
+        <div class="chart-client" data-key="600">aa-meetings.com &middot; SEMrush Position Tracking</div>
+        <div class="chart-title" data-key="601">Keywords en Top 3 y Top 10 &mdash; 43 semanas de crecimiento</div>
+        <div class="chart-sub" data-key="602">Datos reales exportados de SEMrush &middot; Abr 2025 &rarr; Mar 2026</div>
       </div>
       <div class="chart-wrap"><svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -1934,24 +2076,24 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
     <!-- CHART 2: SEMrush Keyword Landscape -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">Análisis competitivo &middot; SEMrush Organic Positions</div>
-        <div class="chart-title">Keywords indexadas vs competidores principales</div>
-        <div class="chart-sub">Escala ×10 &middot; Datos reales SEMrush Organic Positions · May 2025</div>
+        <div class="chart-client" data-key="603">Análisis competitivo &middot; SEMrush Organic Positions</div>
+        <div class="chart-title" data-key="604">Keywords indexadas vs competidores principales</div>
+        <div class="chart-sub" data-key="605">Escala ×10 &middot; Datos reales SEMrush Organic Positions · May 2025</div>
       </div>
-      <div class="chart-wrap"><svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg"><text x="155" y="16" font-family="Jost" font-size="8.5" fill="rgba(245,243,239,0.22)" letter-spacing="0.07em">KEYWORDS INDEXADAS · SEMRUSH ORGANIC POSITIONS · MAYO 2025</text><line x1="241.1" y1="38" x2="241.1" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="241.1" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">10K</text><line x1="327.2" y1="38" x2="327.2" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="327.2" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">20K</text><line x1="413.3" y1="38" x2="413.3" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="413.3" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">30K</text><line x1="499.4" y1="38" x2="499.4" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="499.4" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">40K</text><line x1="585.6" y1="38" x2="585.6" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="585.6" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">50K</text><text x="145" y="59.6" text-anchor="end" font-family="Jost" font-size="10.5" fill="#C9A84C">aa-meetings.com</text><rect x="155" y="38" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="38" width="365.1" height="30" fill="#C9A84C" rx="1"/><text x="529.1" y="59.6" font-family="Cormorant Garamond,serif" font-size="16" font-weight="300" fill="#C9A84C">42.4K</text><text x="145" y="104.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">sober.com</text><rect x="155" y="83" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="83" width="387.5" height="30" fill="rgba(245,243,239,0.18)" rx="1"/><text x="551.5" y="104.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">45.0K</text><text x="145" y="149.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">aa.org</text><rect x="155" y="128" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="128" width="430.6" height="30" fill="rgba(245,243,239,0.13)" rx="1"/><text x="594.6" y="149.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">50.0K</text><text x="145" y="194.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">findrecovery.com</text><rect x="155" y="173" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="173" width="277.1" height="30" fill="rgba(245,243,239,0.10)" rx="1"/><text x="441.1" y="194.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">32.2K</text></svg></div>
+      <div class="chart-wrap"><svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg"><text x="155" y="16" font-family="Jost" font-size="8.5" fill="rgba(245,243,239,0.22)" letter-spacing="0.07em" data-key="620">KEYWORDS INDEXADAS · SEMRUSH ORGANIC POSITIONS · MAYO 2025</text><line x1="241.1" y1="38" x2="241.1" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="241.1" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">10K</text><line x1="327.2" y1="38" x2="327.2" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="327.2" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">20K</text><line x1="413.3" y1="38" x2="413.3" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="413.3" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">30K</text><line x1="499.4" y1="38" x2="499.4" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="499.4" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">40K</text><line x1="585.6" y1="38" x2="585.6" y2="192" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="585.6" y="220" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">50K</text><text x="145" y="59.6" text-anchor="end" font-family="Jost" font-size="10.5" fill="#C9A84C">aa-meetings.com</text><rect x="155" y="38" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="38" width="365.1" height="30" fill="#C9A84C" rx="1"/><text x="529.1" y="59.6" font-family="Cormorant Garamond,serif" font-size="16" font-weight="300" fill="#C9A84C">42.4K</text><text x="145" y="104.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">sober.com</text><rect x="155" y="83" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="83" width="387.5" height="30" fill="rgba(245,243,239,0.18)" rx="1"/><text x="551.5" y="104.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">45.0K</text><text x="145" y="149.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">aa.org</text><rect x="155" y="128" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="128" width="430.6" height="30" fill="rgba(245,243,239,0.13)" rx="1"/><text x="594.6" y="149.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">50.0K</text><text x="145" y="194.6" text-anchor="end" font-family="Jost" font-size="9.5" fill="rgba(245,243,239,0.38)">findrecovery.com</text><rect x="155" y="173" width="465" height="30" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="155" y="173" width="277.1" height="30" fill="rgba(245,243,239,0.10)" rx="1"/><text x="441.1" y="194.6" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="rgba(245,243,239,0.72)">32.2K</text></svg></div>
     </div>
 
     <!-- CHART 3: CPL Comparison -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">Flyland &middot; Google Ads 2024</div>
-        <div class="chart-title">Costo por lead: $10 nuestro vs competidores</div>
-        <div class="chart-sub">CPL real 2024 &middot; Campaign Tracker</div>
+        <div class="chart-client" data-key="606">Flyland &middot; Google Ads 2024</div>
+        <div class="chart-title" data-key="607">Costo por lead: $10 nuestro vs competidores</div>
+        <div class="chart-sub" data-key="608">CPL real 2024 &middot; Campaign Tracker</div>
       </div>
-      <div class="chart-wrap"><svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg"><text x="108" y="42.2" text-anchor="end" font-family="Jost,sans-serif" font-size="11" fill="#C9A84C" font-weight="400">Nuestro CPL</text><rect x="120" y="24" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="24" width="41.7" height="26" fill="#C9A84C" rx="1"/><text x="171.7" y="42.7" font-family="Cormorant Garamond,serif" font-size="20" fill="#C9A84C" font-weight="300">$10</text><text x="215.7" y="42.7" font-family="Jost" font-size="9" fill="#C9A84C" letter-spacing="0.08em">CPL REAL 2024</text><text x="108" y="82.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor A</text><rect x="120" y="64" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="64" width="229.2" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="359.2" y="82.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$55</text><text x="108" y="122.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor B</text><rect x="120" y="104" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="104" width="312.5" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="442.5" y="122.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$75</text><text x="108" y="162.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor C</text><rect x="120" y="144" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="144" width="416.7" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="546.7" y="162.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$100</text><text x="108" y="202.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor D</text><rect x="120" y="184" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="184" width="500.0" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="630.0" y="202.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$120</text></svg></div>
-      <div style="padding:1.25rem 0;margin-top:1.25rem;border-top:1px solid rgba(245,243,239,0.08);display:flex;align-items:center;gap:1.5rem">
+      <div class="chart-wrap"><svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg"><text x="108" y="42.2" text-anchor="end" font-family="Jost,sans-serif" font-size="11" fill="#C9A84C" font-weight="400" data-key="618">Nuestro CPL</text><rect x="120" y="24" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="24" width="41.7" height="26" fill="#C9A84C" rx="1"/><text x="171.7" y="42.7" font-family="Cormorant Garamond,serif" font-size="20" fill="#C9A84C" font-weight="300">$10</text><text x="215.7" y="42.7" font-family="Jost" font-size="9" fill="#C9A84C" letter-spacing="0.08em">CPL REAL 2024</text><text x="108" y="82.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor A</text><rect x="120" y="64" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="64" width="229.2" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="359.2" y="82.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$55</text><text x="108" y="122.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor B</text><rect x="120" y="104" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="104" width="312.5" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="442.5" y="122.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$75</text><text x="108" y="162.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor C</text><rect x="120" y="144" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="144" width="416.7" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="546.7" y="162.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$100</text><text x="108" y="202.2" text-anchor="end" font-family="Jost,sans-serif" font-size="10" fill="rgba(245,243,239,0.38)" font-weight="300">Competidor D</text><rect x="120" y="184" width="505" height="26" fill="rgba(245,243,239,0.07)" rx="1"/><rect x="120" y="184" width="500.0" height="26" fill="rgba(245,243,239,0.12)" rx="1"/><text x="630.0" y="202.7" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(245,243,239,0.72)" font-weight="300">$120</text></svg></div>
+      <div style="padding:1.25rem 0;margin-top:1.25rem;border-top:1px solid rgba(245,243,239,0.08);display:flex;align-items:center;justify-content:center;gap:1.5rem;text-align:center">
           <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#C9A84C">$143K</div>
-          <div style="font-size:.6rem;letter-spacing:.14em;color:rgba(245,243,239,0.45);text-transform:uppercase">Ad spend gestionado en Google Ads 2024</div>
+          <div style="font-size:.6rem;letter-spacing:.14em;color:rgba(245,243,239,0.45);text-transform:uppercase" data-key="700">Ad spend gestionado en Google Ads 2025</div>
         </div>
         <div style="background:#111111;padding:.9rem;text-align:center">
           
@@ -1965,9 +2107,9 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
     <!-- CHART 5: Therapist Coverage (full width) -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">therapist.org &middot; SEO Programático</div>
-        <div class="chart-title">Cobertura programática completa: 100% de EE.UU.</div>
-        <div class="chart-sub">50 estados + 981 ciudades cubiertas &middot; City Optimization Tracker</div>
+        <div class="chart-client" data-key="609">therapist.org &middot; SEO Programático</div>
+        <div class="chart-title" data-key="610">Cobertura programática completa: 100% de EE.UU.</div>
+        <div class="chart-sub" data-key="611">50 estados + 981 ciudades cubiertas &middot; City Optimization Tracker</div>
       </div>
       <div class="chart-wrap"><svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
   <!-- Left stats -->
@@ -1990,7 +2132,7 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
   <!-- Right breakdown -->
   <text x="430" y="35" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)" letter-spacing="0.08em">DESGLOSE</text>
   <rect x="430" y="48" width="8" height="8" fill="#C9A84C" rx="1"/>
-  <text x="445" y="57" font-family="Jost" font-size="10" fill="rgba(245,243,239,0.75)">50 estados</text>
+  <text x="445" y="57" font-family="Jost" font-size="10" fill="rgba(245,243,239,0.75)" data-key="621">50 estados</text>
   <text x="445" y="70" font-family="Jost" font-size="8.5" fill="rgba(245,243,239,0.22)">100% de EE.UU.</text>
   <line x1="430" y1="80" x2="580" y2="80" stroke="rgba(245,243,239,0.08)" stroke-width="1"/>
   <rect x="430" y="92" width="8" height="8" fill="#4fa8d5" rx="1"/>
@@ -2008,11 +2150,11 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
     <!-- CHART 6: Visibility vs Competitor -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">aa-meetings.com vs sober.com &middot; SEMrush Competitive Analysis</div>
-        <div class="chart-title">Visibilidad orgánica: superamos al competidor principal</div>
-        <div class="chart-sub">Abr 2025 &rarr; May 2026 &middot; Datos SEMrush Visibility · aa-meetings.com 26.81% vs sober.com 22.95%</div>
+        <div class="chart-client" data-key="612">aa-meetings.com vs sober.com &middot; SEMrush Competitive Analysis</div>
+        <div class="chart-title" data-key="613">Visibilidad orgánica: superamos al competidor principal</div>
+        <div class="chart-sub" data-key="614">Abr 2025 &rarr; May 2026 &middot; Datos SEMrush Visibility · aa-meetings.com 26.81% vs sober.com 22.95%</div>
       </div>
-      <div class="chart-wrap"><svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg"><text x="48" y="16" font-family="Jost" font-size="8.5" fill="rgba(245,243,239,0.22)" letter-spacing="0.07em">VISIBILIDAD ORGÁNICA · SEMRUSH COMPETITIVE ANALYSIS · ABR 2025 – MAY 2026</text><line x1="48" y1="202.0" x2="620" y2="202.0" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="205.0" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">0%</text><line x1="48" y1="165.6" x2="620" y2="165.6" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="168.6" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">8%</text><line x1="48" y1="129.1" x2="620" y2="129.1" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="132.1" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">16%</text><line x1="48" y1="92.7" x2="620" y2="92.7" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="95.7" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">24%</text><line x1="48" y1="56.2" x2="620" y2="56.2" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="59.2" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">32%</text><path d="M 48.0,113.2 L 81.6,111.8 L 115.3,110.0 L 148.9,106.3 L 182.6,89.0 L 216.2,90.4 L 249.9,91.3 L 283.5,92.7 L 317.2,94.9 L 350.8,93.6 L 384.5,92.7 L 418.1,91.8 L 451.8,92.7 L 485.4,91.3 L 519.1,89.0 L 552.7,91.8 L 586.4,96.8 L 620.0,97.5 L 620.0,202 L 48.0,202 Z" fill="rgba(46,204,113,0.08)"/><path d="M 48.0,113.2 L 81.6,111.8 L 115.3,110.0 L 148.9,106.3 L 182.6,89.0 L 216.2,90.4 L 249.9,91.3 L 283.5,92.7 L 317.2,94.9 L 350.8,93.6 L 384.5,92.7 L 418.1,91.8 L 451.8,92.7 L 485.4,91.3 L 519.1,89.0 L 552.7,91.8 L 586.4,96.8 L 620.0,97.5" fill="none" stroke="#2ecc71" stroke-width="2"/><path d="M 48.0,173.8 L 81.6,173.3 L 115.3,172.4 L 148.9,155.5 L 182.6,135.9 L 216.2,125.5 L 249.9,122.3 L 283.5,120.9 L 317.2,130.9 L 350.8,123.6 L 384.5,117.7 L 418.1,110.4 L 451.8,102.7 L 485.4,94.9 L 519.1,91.8 L 552.7,93.6 L 586.4,87.2 L 620.0,79.9 L 620.0,202 L 48.0,202 Z" fill="rgba(201,168,76,0.15)"/><path d="M 48.0,173.8 L 81.6,173.3 L 115.3,172.4 L 148.9,155.5 L 182.6,135.9 L 216.2,125.5 L 249.9,122.3 L 283.5,120.9 L 317.2,130.9 L 350.8,123.6 L 384.5,117.7 L 418.1,110.4 L 451.8,102.7 L 485.4,94.9 L 519.1,91.8 L 552.7,93.6 L 586.4,87.2 L 620.0,79.9" fill="none" stroke="#C9A84C" stroke-width="2.5"/><circle cx="148.9" cy="155.5" r="4" fill="#C9A84C" stroke="#111111" stroke-width="2"/><circle cx="620.0" cy="79.9" r="4" fill="#C9A84C" stroke="#111111" stroke-width="2"/><circle cx="620.0" cy="97.5" r="4" fill="#2ecc71" stroke="#111111" stroke-width="2"/><text x="627.0" y="83.9" font-family="Cormorant Garamond,serif" font-size="16" fill="#C9A84C" font-weight="300">26.81%</text><text x="627.0" y="101.5" font-family="Cormorant Garamond,serif" font-size="14" fill="#2ecc71" font-weight="300">22.95%</text><line x1="586.4" y1="38" x2="586.4" y2="202" stroke="#C9A84C" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/><text x="582.4" y="50.0" text-anchor="end" font-family="Jost" font-size="8" fill="#C9A84C" letter-spacing="0.06em">SUPERAMOS AL COMPETIDOR</text><text x="52.0" y="166.8" font-family="Jost" font-size="8.5" fill="#C9A84C">6.2%</text><text x="48.0" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Abr 30</text><text x="148.9" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Jul 2</text><text x="249.9" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Sep 3</text><text x="350.8" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Nov 5</text><text x="451.8" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Ene 7</text><text x="552.7" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Mar 11</text></svg></div>
+      <div class="chart-wrap"><svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg"><text x="48" y="16" font-family="Jost" font-size="8.5" fill="rgba(245,243,239,0.22)" letter-spacing="0.07em" data-key="619">VISIBILIDAD ORGÁNICA · SEMRUSH COMPETITIVE ANALYSIS · ABR 2025 – MAY 2026</text><line x1="48" y1="202.0" x2="620" y2="202.0" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="205.0" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">0%</text><line x1="48" y1="165.6" x2="620" y2="165.6" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="168.6" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">8%</text><line x1="48" y1="129.1" x2="620" y2="129.1" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="132.1" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">16%</text><line x1="48" y1="92.7" x2="620" y2="92.7" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="95.7" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">24%</text><line x1="48" y1="56.2" x2="620" y2="56.2" stroke="rgba(245,243,239,0.08)" stroke-width="1"/><text x="42" y="59.2" text-anchor="end" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">32%</text><path d="M 48.0,113.2 L 81.6,111.8 L 115.3,110.0 L 148.9,106.3 L 182.6,89.0 L 216.2,90.4 L 249.9,91.3 L 283.5,92.7 L 317.2,94.9 L 350.8,93.6 L 384.5,92.7 L 418.1,91.8 L 451.8,92.7 L 485.4,91.3 L 519.1,89.0 L 552.7,91.8 L 586.4,96.8 L 620.0,97.5 L 620.0,202 L 48.0,202 Z" fill="rgba(46,204,113,0.08)"/><path d="M 48.0,113.2 L 81.6,111.8 L 115.3,110.0 L 148.9,106.3 L 182.6,89.0 L 216.2,90.4 L 249.9,91.3 L 283.5,92.7 L 317.2,94.9 L 350.8,93.6 L 384.5,92.7 L 418.1,91.8 L 451.8,92.7 L 485.4,91.3 L 519.1,89.0 L 552.7,91.8 L 586.4,96.8 L 620.0,97.5" fill="none" stroke="#2ecc71" stroke-width="2"/><path d="M 48.0,173.8 L 81.6,173.3 L 115.3,172.4 L 148.9,155.5 L 182.6,135.9 L 216.2,125.5 L 249.9,122.3 L 283.5,120.9 L 317.2,130.9 L 350.8,123.6 L 384.5,117.7 L 418.1,110.4 L 451.8,102.7 L 485.4,94.9 L 519.1,91.8 L 552.7,93.6 L 586.4,87.2 L 620.0,79.9 L 620.0,202 L 48.0,202 Z" fill="rgba(201,168,76,0.15)"/><path d="M 48.0,173.8 L 81.6,173.3 L 115.3,172.4 L 148.9,155.5 L 182.6,135.9 L 216.2,125.5 L 249.9,122.3 L 283.5,120.9 L 317.2,130.9 L 350.8,123.6 L 384.5,117.7 L 418.1,110.4 L 451.8,102.7 L 485.4,94.9 L 519.1,91.8 L 552.7,93.6 L 586.4,87.2 L 620.0,79.9" fill="none" stroke="#C9A84C" stroke-width="2.5"/><circle cx="148.9" cy="155.5" r="4" fill="#C9A84C" stroke="#111111" stroke-width="2"/><circle cx="620.0" cy="79.9" r="4" fill="#C9A84C" stroke="#111111" stroke-width="2"/><circle cx="620.0" cy="97.5" r="4" fill="#2ecc71" stroke="#111111" stroke-width="2"/><text x="627.0" y="83.9" font-family="Cormorant Garamond,serif" font-size="16" fill="#C9A84C" font-weight="300">26.81%</text><text x="627.0" y="101.5" font-family="Cormorant Garamond,serif" font-size="14" fill="#2ecc71" font-weight="300">22.95%</text><line x1="586.4" y1="38" x2="586.4" y2="202" stroke="#C9A84C" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/><text x="582.4" y="50.0" text-anchor="end" font-family="Jost" font-size="8" fill="#C9A84C" letter-spacing="0.06em">SUPERAMOS AL COMPETIDOR</text><text x="52.0" y="166.8" font-family="Jost" font-size="8.5" fill="#C9A84C">6.2%</text><text x="48.0" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Abr 30</text><text x="148.9" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Jul 2</text><text x="249.9" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Sep 3</text><text x="350.8" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Nov 5</text><text x="451.8" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Ene 7</text><text x="552.7" y="230" text-anchor="middle" font-family="Jost" font-size="9" fill="rgba(245,243,239,0.22)">Mar 11</text></svg></div>
       <div class="chart-legend">
         <div class="cl-item"><span class="cl-swatch" style="background:#C9A84C"></span>aa-meetings.com &mdash; <strong style="color:#C9A84C">26.81%</strong> visibilidad</div>
         <div class="cl-item"><span class="cl-swatch" style="background:#2ecc71"></span>sober.com (competidor principal) &mdash; 22.95%</div>
@@ -2022,9 +2164,9 @@ footer{padding:2rem 3.5rem;border-top:1px solid var(--border);display:flex;justi
     <!-- CHART 7: Google Search Console Performance -->
     <div class="chart-card chart-full">
       <div class="chart-header">
-        <div class="chart-client">aa-meetings.com &middot; Google Search Console</div>
-        <div class="chart-title">Performance organica: clicks, impresiones y posicion promedio</div>
-        <div class="chart-sub">Ene 2025 &rarr; Abr 2026 &middot; 16 meses &middot; Datos reales de Google Search Console</div>
+        <div class="chart-client" data-key="615">aa-meetings.com &middot; Google Search Console</div>
+        <div class="chart-title" data-key="616">Performance organica: clicks, impresiones y posicion promedio</div>
+        <div class="chart-sub" data-key="617">Ene 2025 &rarr; Abr 2026 &middot; 16 meses &middot; Datos reales de Google Search Console</div>
       </div>
 
       <!-- GSC stat boxes -->
@@ -3124,6 +3266,7 @@ var TD=[
   [194,'Lead Gen','Lead Gen'],
   [195,'CPL Optimization','CPL Optimization'],
   [196,'MCA Keywords','MCA Keywords'],
+  [700,'Ad spend gestionado en Google Ads 2025','Ad spend managed on Google Ads 2025'],
   [197,'Programmatic SEO','Programmatic SEO'],
   [200,'Desplázate para explorar','Scroll to explore'],
   [201,'USD/hr','USD/hr'],
@@ -3182,6 +3325,28 @@ var TD=[
   [400,'Siempre empieza con un <em>diagnóstico gratuito</em>','Always starts with a <em>free diagnostic</em>'],
   [401,'Alcance definido, entregables fijos, precio acordado. Ideal para auditorías SEO, builds programáticos, lanzamientos web y proyectos únicos con resultados claros.','Defined scope, fixed deliverables, agreed price. Ideal for SEO audits, programmatic builds, website launches, and one-time projects with clear outcomes.'],
   [402,'Máxima flexibilidad con total transparencia. Perfecto para retainers SEO mensuales, contenido, automatización o cualquier alcance que evoluciona con el tiempo.','Maximum flexibility with full transparency. Perfect for ongoing SEO retainers, monthly content, automation, or any scope that evolves over time.'],
+  [600,'aa-meetings.com &middot; SEMrush Position Tracking','aa-meetings.com &middot; SEMrush Position Tracking'],
+  [601,'Keywords en Top 3 y Top 10 &mdash; 43 semanas de crecimiento','Keywords in Top 3 and Top 10 &mdash; 43 weeks of growth'],
+  [602,'Datos reales exportados de SEMrush &middot; Abr 2025 &rarr; Mar 2026','Real data exported from SEMrush &middot; Apr 2025 &rarr; Mar 2026'],
+  [603,'Análisis competitivo &middot; SEMrush Organic Positions','Competitive analysis &middot; SEMrush Organic Positions'],
+  [604,'Keywords indexadas vs competidores principales','Indexed keywords vs main competitors'],
+  [605,'Escala ×10 &middot; Datos reales SEMrush Organic Positions · May 2025','Scale ×10 &middot; Real SEMrush Organic Positions data · May 2025'],
+  [606,'Flyland &middot; Google Ads 2024','Flyland &middot; Google Ads 2024'],
+  [607,'Costo por lead: $10 nuestro vs competidores','Cost per lead: $10 ours vs competitors'],
+  [608,'CPL real 2024 &middot; Campaign Tracker','Real CPL 2024 &middot; Campaign Tracker'],
+  [609,'therapist.org &middot; SEO Programático','therapist.org &middot; Programmatic SEO'],
+  [610,'Cobertura programática completa: 100% de EE.UU.','Full programmatic coverage: 100% of the U.S.'],
+  [611,'50 estados + 981 ciudades cubiertas &middot; City Optimization Tracker','50 states + 981 cities covered &middot; City Optimization Tracker'],
+  [612,'aa-meetings.com vs sober.com &middot; SEMrush Competitive Analysis','aa-meetings.com vs sober.com &middot; SEMrush Competitive Analysis'],
+  [613,'Visibilidad orgánica: superamos al competidor principal','Organic visibility: we surpassed the main competitor'],
+  [614,'Abr 2025 &rarr; May 2026 &middot; Datos SEMrush Visibility · aa-meetings.com 26.81% vs sober.com 22.95%','Apr 2025 &rarr; May 2026 &middot; SEMrush Visibility data · aa-meetings.com 26.81% vs sober.com 22.95%'],
+  [615,'aa-meetings.com &middot; Google Search Console','aa-meetings.com &middot; Google Search Console'],
+  [616,'Performance organica: clicks, impresiones y posicion promedio','Organic performance: clicks, impressions and average position'],
+  [617,'Ene 2025 &rarr; Abr 2026 &middot; 16 meses &middot; Datos reales de Google Search Console','Jan 2025 &rarr; Apr 2026 &middot; 16 months &middot; Real Google Search Console data'],
+  [618,'Nuestro CPL','Our CPL'],
+  [619,'VISIBILIDAD ORGÁNICA · SEMRUSH COMPETITIVE ANALYSIS · ABR 2025 – MAY 2026','ORGANIC VISIBILITY · SEMRUSH COMPETITIVE ANALYSIS · APR 2025 – MAY 2026'],
+  [620,'KEYWORDS INDEXADAS · SEMRUSH ORGANIC POSITIONS · MAYO 2025','INDEXED KEYWORDS · SEMRUSH ORGANIC POSITIONS · MAY 2025'],
+  [621,'50 estados','50 states'],
   [325,'ROAS, CPA, CTR y seguimiento de conversiones en Google Ads y Meta Ads — integrado con datos de SEO para una visión completa del rendimiento del canal.','ROAS, CPA, CTR, and conversion tracking across Google Ads and Meta Ads — integrated with SEO data for a complete channel performance view.']
 ];
 
